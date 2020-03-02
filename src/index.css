@@ -1,3 +1,7 @@
+#root{
+  box-sizing: none;
+}
+
 *{
   font-family: "Montserrat", sans-serif
 }
