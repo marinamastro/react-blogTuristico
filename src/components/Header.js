@@ -1,18 +1,19 @@
 import React from "react";
 import {Row} from "react-bootstrap";
-import {Col} from "react-bootstrap"
+import {Col,Container} from "react-bootstrap"
 
 
 function Header (){
     
-    return(        
+    return(   
+          
         <Row>
             <Col className="titulo">
-            <h1>BLOGTURÍSTICO</h1> 
-            <p id="subtitulo">BY TRAVELLERS</p>       
+            <h3>BLOGTURÍSTICO</h3>
+            <p id="subtitulo">BY TRAVELLERS</p>               
             </Col>
         </Row>    
-        
+       
     )
 }
 

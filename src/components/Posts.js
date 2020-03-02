@@ -1,6 +1,5 @@
 import React from "react"
-import { Row } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
+import { Row,Col,Image } from 'react-bootstrap';
 import dataPosts from "../posts.json";
 import Post from "./Post";
 import Comments from "./Comments";
@@ -65,7 +64,7 @@ class Posts extends React.Component {
     return(
         <Row className="noticia">
             <Col lg={2} md={2}>            
-              <img src={this.props.datos.img}  alt="" width="100%" />    
+              <Image src={this.props.datos.img}  alt="" fluid />    
            </Col>
             <Col lg={10} md={10}>
                 <Post datos={this.props.datos}/>    
