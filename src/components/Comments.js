@@ -6,7 +6,7 @@ function Comments(props){
     const comments=props.comments.map(x=>
         {
       if(props.id===x.postId) {
-          return <Comment name={x.name} comment={x.body} key={x.id} />
+          return <Comment email={x.email} comment={x.body} key={x.id} />
       }
    
     })
@@ -21,7 +21,7 @@ function Comments(props){
 function Comment(props){
     return(
         <React.Fragment>
-            <span><FaUserAlt/><strong>{props.name}: </strong></span>
+            <span><FaUserAlt/><strong> {props.email}: </strong></span>
             <span style={{marginLeft:"1%"}}><i>{props.comment}</i></span>
             <br/>
             <br/>
