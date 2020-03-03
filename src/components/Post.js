@@ -7,20 +7,24 @@ function Post (props){
         fontFamily: "'Quicksand', sans-serif",
         fontWeight:"bold"
     }
-    if(categoria==="Colombia"){
-        style.color="rgb(233, 236, 48)"
-    }else if(categoria==="Argentina"){
-        style.color="blue"
-    }
-    else if(categoria==="Brasil"){
-        style.color="rgb(38, 184, 25)"
-    }
-    else if(categoria==="España"){
-        style.color="red"
-    }
-    else if(categoria==="México"){
-        style.color="orange"
-    }
+    switch (categoria) {
+        case "Colombia":
+            style.color="rgb(233, 236, 48)";
+        break;
+        case "Argentina":
+            style.color="blue";
+        break;
+        case "España":
+            style.color="red";
+        break;
+        case "Brasil":
+            style.color="rgb(38, 184, 25)";
+        break;
+        case "México":
+            style.color="orange";
+        break;   
+       }
+ 
     return(
         <React.Fragment >
         <h4>{props.datos.titulo}</h4>
