@@ -16,7 +16,7 @@ class Main extends React.Component{
                  const posts=[];
                  const filterText=data.filterText;
                  dataPosts.forEach(post=>{
-                     if (post.descripcion.indexOf(filterText) === -1) {
+                     if (post.titulo.indexOf(filterText) === -1) {
                          return;
                        }
                  posts.push(<Posts datos={post} key={post.id} />)});
@@ -32,8 +32,7 @@ class Main extends React.Component{
                 <input type="text"
                 value={data.filterText}
                 onChange={data.handleChange}
-                placeholder="Buscador"
-                autoComplete="true"/>
+                placeholder="Buscá por título"/>
                 </Col>               
             </Row>
             <Row className="justify-content-md-center">                

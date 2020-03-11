@@ -1,5 +1,5 @@
 import React from "react";
-import dataPosts from "./posts.json"
+import dataPosts from "./posts.json";
 
 const context = new React.createContext();
 
@@ -7,8 +7,8 @@ class Provider extends React.Component{
     state={
             filterText:"",
             copyPosts:[],
-            filter:false
-        }; 
+            filter:false       
+            }; 
 
         componentDidMount(){
             this.setPosts()               
@@ -21,7 +21,9 @@ class Provider extends React.Component{
                posts=[...posts,singleItem]
            })
            this.setState({copyPosts:posts})        
-        };    
+        };
+        
+  
     
            handleClick=(id)=>{    
                 const posts = dataPosts.filter(x=>x.categoria === id)
@@ -33,13 +35,17 @@ class Provider extends React.Component{
            };
     
            handleChange=(e)=>{
-            this.setState({filterText:e.target.value,filter:true})
+            this.setState({filterText:e.target.value.toUpperCase(),filter:true})
            };
         
     
     render(){
         return(
-            <context.Provider value={{...this.state,handleClick:this.handleClick,handleChange:this.handleChange}}>
+            <context.Provider value={{
+            ...this.state,
+            handleClick:this.handleClick,
+            handleChange:this.handleChange,
+            }}>
                 {this.props.children}
             </context.Provider>
         )
