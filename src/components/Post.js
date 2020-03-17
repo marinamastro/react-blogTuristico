@@ -23,6 +23,8 @@ function Post (props){
         case "México":
             style.color="orange";
         break;   
+        default:
+            break;
        }
  
     return(
