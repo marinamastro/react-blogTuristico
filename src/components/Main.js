@@ -40,7 +40,7 @@ class Main extends React.Component{
        };
 
        handleChange=(e)=>{
-        this.setState({filterText:e.target.value,filter:true})
+        this.setState({filterText:e.target.value.toUpperCase(),filter:true})
        };
 
 
@@ -48,7 +48,7 @@ class Main extends React.Component{
         const posts=[];
         const filterText=this.state.filterText;
         dataPosts.forEach(post=>{
-            if (post.descripcion.indexOf(filterText) === -1) {
+            if (post.titulo.indexOf(filterText) === -1) {
                 return;
               }
         posts.push(<Posts datos={post} key={post.id} />)});
@@ -63,7 +63,7 @@ class Main extends React.Component{
                 <input type="text"
                 value={this.state.filterText}
                 onChange={this.handleChange}                
-                placeholder="Buscador"
+                placeholder="Busca por título"
                 autoComplete="true"/>
                 </Col>               
             </Row>

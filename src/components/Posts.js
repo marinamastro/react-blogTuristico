@@ -19,6 +19,7 @@ class Posts extends React.Component {
     fetch("https://jsonplaceholder.typicode.com/comments")
     .then(response=>response.json())
     .then(data=>this.setState({comments:data}))
+    .catch(error=>console.log(error))
 }
 
    leerMas=(id)=>{    
