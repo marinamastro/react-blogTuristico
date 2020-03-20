@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { Row,Col } from 'react-bootstrap';
 import Posts from "./Posts";
 import dataPosts from "../posts.json";
@@ -12,12 +12,16 @@ class Main extends React.Component{
         super()
         this.state={filterText:"",
                     copyPosts:[],
-                    filter:false
+                    filter:false,
+                    comments:[]
         }   
     };
 
     componentDidMount(){
-        this.setPosts()               
+        this.setPosts();
+        fetch("https://jsonplaceholder.typicode.com/comments")
+        .then(response=>response.json())
+        .then(data=>this.setState({comments:data}))                    
     };
 
     setPosts=()=>{
@@ -64,14 +68,14 @@ class Main extends React.Component{
                 value={this.state.filterText}
                 onChange={this.handleChange}                
                 placeholder="Busca por título"
-                autoComplete="true"/>
+                />
                 </Col>               
             </Row>
             <Row className="justify-content-md-center">                
                 <Col lg={10} md={10}>   
                 {this.state.filter ? <React.Fragment>{posts}</React.Fragment> :
                     this.state.copyPosts.map(x=>{                
-                        return <Posts datos={x} key={x.id} />
+                        return <Posts datos={x} key={x.id} comments={this.state.comments} />
                     })
                 }        
 

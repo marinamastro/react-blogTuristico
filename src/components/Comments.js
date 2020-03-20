@@ -8,7 +8,7 @@ function Comments(props){
       if(props.id===x.postId) {
           return <Comment email={x.email} comment={x.body} key={x.id} />
       }
-   
+   return null;
     })
     return(
         <div className="comentarios"> 

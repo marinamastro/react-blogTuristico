@@ -10,17 +10,11 @@ class Posts extends React.Component {
        super(props)
        this.state={ posts:dataPosts,
                     leerMas:false,
-                    nuevoDato:"",
-                    comments:[]
+                    nuevoDato:""                   
                                                             
     }
    } 
-   componentDidMount(){
-    fetch("https://jsonplaceholder.typicode.com/comments")
-    .then(response=>response.json())
-    .then(data=>this.setState({comments:data}))
-    .catch(error=>console.log(error))
-}
+ 
 
    leerMas=(id)=>{    
     let dato;    
@@ -55,7 +49,7 @@ class Posts extends React.Component {
             <Col>
             <Post datos={this.props.datos} nuevoDato={this.state.nuevoDato}/>  
             </Col>
-            <Comments comments={this.state.comments} id={this.props.datos.id}/> 
+            <Comments comments={this.props.comments} id={this.props.datos.id}/> 
             <h6 style={{paddingLeft:"2%"}}onClick={()=>{this.leerMenos(this.props.datos.id)}}>
             <strong>Leer menos</strong>
             </h6>
