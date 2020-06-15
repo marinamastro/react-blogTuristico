@@ -19,7 +19,8 @@ class Main extends React.Component{
 
     componentDidMount(){
         this.setPosts();
-        fetch("https://jsonplaceholder.typicode.com/comments")
+        fetch("https://jsonplaceholder.typicode.com/comments",{headers: { 'Content-Type': 'application/json' },
+            mode: 'no-cors'})
         .then(response=>response.json())
         .then(data=>this.setState({comments:data}))                    
     };
