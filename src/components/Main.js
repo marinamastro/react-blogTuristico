@@ -6,10 +6,14 @@ import NavBar from "./Navbar";
 import { FaSearch } from "react-icons/fa";
 
 
-const params = {
-    headers: { 'Content-Type': 'application/json' },
-    mode: 'no-cors',
-};
+// const params = {
+//     headers: { 'Content-Type': 'application/json' },
+//     mode: 'no-cors',
+// };
+myHeaders = new Headers({
+    "Content-Type": "application/json",
+    "mode": "no-cors",    
+  });
 class Main extends React.Component{
     constructor(){
         super()
@@ -22,7 +26,7 @@ class Main extends React.Component{
 
     componentDidMount(){
         this.setPosts();
-        fetch("https://jsonplaceholder.typicode.com/comments",params)
+        fetch("https://jsonplaceholder.typicode.com/comments",myHeaders)
         .then(response=>response.json())
         .then(data=>this.setState({comments:data}))                    
     };
