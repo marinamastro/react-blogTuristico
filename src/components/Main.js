@@ -10,7 +10,8 @@ import { FaSearch } from "react-icons/fa";
 //     headers: { 'Content-Type': 'application/json' },
 //     mode: 'no-cors',
 // };
-const myHeaders = new Headers({
+var myHeaders = new Headers();
+myHeaders = new Headers({
     "Content-Type": "application/json",
     "mode": "no-cors",    
   });
