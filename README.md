@@ -1,7 +1,5 @@
-Blog básico donde aplico los primeros conocimientos que obtuve de React js.
-Todos los post son traídos de un JSON externo, y los comentarios de una llamada a la api jsonplaceholder.
-
-https://react-blog-turistico.netlify.app/
+Fake basic blog where I apply my first knowledge about React js. Posts getted from a local JSON, and comments from jsonplaceholder api.
+Available in: https://react-blog-turistico.netlify.app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
